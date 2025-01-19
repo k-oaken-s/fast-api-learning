@@ -7,7 +7,6 @@ app = FastAPI(
     openapi_url=f"{settings.API_V1_STR}/openapi.json"
 )
 
-# CORS設定
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -16,7 +15,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ルートエンドポイント
 @app.get("/")
 async def root():
     return {"message": "Welcome to LGTM Image Service"}
